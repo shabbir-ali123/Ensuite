@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ENSUITE</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="h-screen">
+    <section class="h-screen">
+      <header class="bg-white shadow-md py-3">
+        <nav class="flex justify-between items-center mx-8">
+          <div>
+            <img
+              src="./assets/img/ENSUITELogo.png"
+              width="198"
+              height="45"
+              alt="ENSUITE Logo"
+            />
+          </div>
+          <div class="flex gap-4 items-center">
+            <img
+              src="./assets/img/Bell Vector.png"
+              width="24px"
+              height="24px"
+              alt=""
+            />
+            <img
+              src="./assets/img/Profile Avatar.png"
+              width="44px"
+              height="44px"
+              alt="profile"
+            />
+            <button
+              id="menu-btn"
+              class="md:hidden border-2 border-solid-purple text-white px-2 py-2 rounded-lg"
+              onclick="toggleSidebar()"
+            >
+              <img
+                src="./assets/img/align-justify.svg"
+                class="text-white"
+                width="30px"
+                height="30px"
+                alt="ENSUITE Logo"
+              />
+            </button>
+          </div>
+        </nav>
+      </header>
+      <div class="flex h-screen font-sans">
+        <div class="flex w-full">
+          <!-- Sidebar -->
+          <aside
+            id="sidebar"
+            class="bg-white p-5 pt-16 shadow-md h-screen fixed md:relative hidden md:block transition-transform transform md:translate-x-0 md:hidden-sidebar"
+            style="width: 270px; height: 100%; right: 0"
+          >
+            <ul class="list-none p-0 h-full">
+              <li
+                class="cursor-pointer py-2 px-2 menu-item font-bold flex justify-between items-center pb-8"
+                onclick="openTab('ace-gpt', this)"
+              >
+                ACE GPT
+                <img
+                  src="./assets/img/ACE GPT.png"
+                  width="24px"
+                  height="24px"
+                  alt=""
+                />
+              </li>
+              <li
+                class="cursor-pointer py-2 px-2 menu-item font-bold flex justify-between items-center pb-8"
+                onclick="openTab('campus-cart', this)"
+              >
+                Campus Cart
+                <img
+                  src="./assets/img/Campus.png"
+                  width="24px"
+                  height="24px"
+                  alt=""
+                />
+              </li>
+              <li
+                class="cursor-pointer py-2 px-2 menu-item font-bold flex justify-between items-center pb-8"
+                onclick="openTab('workspace', this)"
+              >
+                Workspace<img
+                  src="./assets/img/Files Vector.png"
+                  width="24px"
+                  height="24px"
+                  alt=""
+                />
+              </li>
+              <li
+                class="cursor-pointer py-2 px-2 menu-item font-bold flex justify-between items-center pb-8"
+                onclick="openTab('student-hub', this)"
+              >
+                Student Hub
+                <img
+                  src="./assets/img/Student Vector.png"
+                  width="24px"
+                  height="24px"
+                  alt=""
+                />
+              </li>
+              <li
+                class="cursor-pointer py-2 px-2 menu-item font-bold flex justify-between items-center pb-8"
+                onclick="openTab('uni-link', this)"
+              >
+                Uni-Link
+                <img
+                  src="./assets/img/Chat Vector.png"
+                  width="24px"
+                  height="24px"
+                  alt=""
+                />
+              </li>
+              <li
+                class="cursor-pointer py-2 px-2 menu-item font-bold flex justify-between items-center pb-8"
+                onclick="openTab('easyfit', this)"
+              >
+                EasyFit
+                <img
+                  src="./assets/img/Heart Vector.png"
+                  width="24px"
+                  height="24px"
+                  alt=""
+                />
+              </li>
+              <li
+                class="cursor-pointer py-2 px-2 menu-item font-bold flex justify-between items-center pb-8"
+                onclick="openTab('serenity', this)"
+              >
+                Serenity
+                <img
+                  src="./assets/img/Mind Vector.png"
+                  width="24px"
+                  height="24px"
+                  alt=""
+                />
+              </li>
+              <li
+                class="cursor-pointer py-2 px-2 menu-item font-bold flex justify-between items-center pb-8"
+                onclick="openTab('global-spotlight', this)"
+              >
+                Global Spotlight
+                <img
+                  src="./assets/img/Vector.png"
+                  width="24px"
+                  height="24px"
+                  alt=""
+                />
+              </li>
+            </ul>
+          </aside>
+
+          <!-- Main Content -->
+
+          <main
+            class="flex-1 p-4 md:p-8 transition-all duration-300 flex items-center"
+          >
+            <div class="bg-white p-8 max-w-4xl">
+              <h2 class="font-bold mb-4 text-5xl leading-10">
+                Your Workspace <br />
+                <span class="text-purple-600 text-5xl">"Muscle Makers"</span>
+                is now created ✨
+              </h2>
+              <img
+                src="./assets/img/Screenshot 2024-06-17 at 2.11.51 AM 1.png"
+                alt=""
+              />
+              <div class="p-6 rounded-lg">
+                <p class="mb-14 text-gray-700 text-2xl font-medium">
+                  To open the Workspace, select the Workspace tab on the left,
+                  then look for the "My Workspaces" column on the right. Feel
+                  free to create another workspace whenever you like.
+                </p>
+                <div>
+                  <button
+                    class="bg-blue-800 text-white px-4 py-2 gap-2 flex items-center rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600"
+                  >
+                    Continue
+                    <img src="./assets/img/Group.png" alt="" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("hidden");
+      }
+
+      function openTab(tabName, el) {
+        var i, tabcontent, menuitem;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].classList.add("hidden");
+        }
+        menuitem = document.getElementsByClassName("menu-item");
+        for (i = 0; i < menuitem.length; i++) {
+          menuitem[i].classList.remove("active");
+        }
+        document.getElementById(tabName).classList.remove("hidden");
+        el.classList.add("active");
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        openTab("ace-gpt", document.querySelector(".menu-item"));
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ENSUITE</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="h-screen">
+    <header class="bg-white shadow-md py-3">
+      <nav class="flex justify-between items-center mx-8">
+        <img
+          src="./assets/img/ENSUITELogo.png"
+          width="198"
+          height="45"
+          alt="ENSUITE Logo"
+        />
+        <div class="flex gap-4 items-center">
+          <img
+            src="./assets/img/Bell Vector.png"
+            width="24px"
+            height="24px"
+            alt="Bell Icon"
+          />
+          <img
+            src="./assets/img/Profile Avatar.png"
+            width="44px"
+            height="44px"
+            alt="Profile"
+          />
+          <button
+            id="menu-btn"
+            class="md:hidden border-2 border-purple-500 text-white px-2 py-2 rounded-lg"
+            onclick="toggleSidebar()"
+          >
+            <img
+              src="./assets/img/align-justify.svg"
+              class="text-white"
+              width="30px"
+              height="30px"
+              alt="Menu Icon"
+            />
+          </button>
+        </div>
+      </nav>
+    </header>
+    <div class="grid grid-cols-1 md:grid-cols-4 h-full">
+      <!-- Sidebar -->
+      <aside
+        id="sidebar"
+        class="bg-white p-5 pt-16 shadow-md h-screen fixed md:relative hidden md:block transition-transform transform md:translate-x-0 md:hidden-sidebar"
+        style="width: 270px; height: 100%; right: 0"
+      >
+        <ul class="list-none p-0 h-full">
+          <li
+            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
+            onclick="openTab('ace-gpt', this)"
+          >
+            <img
+              src="./assets/img/ACE GPT.png"
+              width="24px"
+              height="24px"
+              alt=""
+            />ACE GPT
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
+            onclick="openTab('campus-cart', this)"
+          >
+            <img
+              src="./assets/img/Campus.png"
+              width="24px"
+              height="24px"
+              alt=""
+            />Campus Cart
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
+            onclick="openTab('workspace', this)"
+          >
+            <img
+              src="./assets/img/Files Vector.png"
+              width="24px"
+              height="24px"
+              alt=""
+            />Workspace
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
+            onclick="openTab('student-hub', this)"
+          >
+            <img
+              src="./assets/img/Student Vector.png"
+              width="24px"
+              height="24px"
+              alt=""
+            />Student Hub
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
+            onclick="openTab('uni-link', this)"
+          >
+            <img
+              src="./assets/img/Chat Vector.png"
+              width="24px"
+              height="24px"
+              alt=""
+            />Uni-Link
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
+            onclick="openTab('easyfit', this)"
+          >
+            <img
+              src="./assets/img/Heart Vector.png"
+              width="24px"
+              height="24px"
+              alt=""
+            />EasyFit
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
+            onclick="openTab('serenity', this)"
+          >
+            <img
+              src="./assets/img/Mind Vector.png"
+              width="24px"
+              height="24px"
+              alt=""
+            />Serenity
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
+            onclick="openTab('global-spotlight', this)"
+          >
+            <img
+              src="./assets/img/Vector.png"
+              width="24px"
+              height="24px"
+              alt=""
+            />Global Spotlight
+          </li>
+        </ul>
+      </aside>
+      <!-- Main Content -->
+      <main class="transition-all duration-300 md:col-span-3">
+        <h2 class="text-2xl font-bold mt-10">Create your Workspace</h2>
+        <section
+          class="flex flex-col items-start justify-center h-full sm:flex-col"
+        >
+          <div class="w-full sm:flex sm:flex-col">
+            <div class="flex flex-col md:flex-row md:w-full m-auto">
+              <div
+                class="flex flex-row md:flex-col items-center mb-8 md:mb-0 md:w-1/5"
+              >
+                <a href="#signup" class="no-underline">
+                  <button
+                    class="w-10 h-10 text-white rounded-full bg-blue-500 flex items-center justify-center font-bold border-none"
+                  >
+                    1
+                  </button>
+                </a>
+                <div
+                  class="step-line h-0.5 w-full bg-blue-500 mx-auto md:h-28 md:w-0.5"
+                ></div>
+                <a href="#account-information">
+                  <button
+                    class="w-10 h-10 text-white rounded-full bg-blue-500 flex items-center justify-center font-bold border-none"
+                  >
+                    2
+                  </button>
+                </a>
+                <div
+                  class="step-line h-0.5 w-full bg-blue-500 mx-auto md:h-28 md:w-0.5"
+                ></div>
+                <a href="#verification-code">
+                  <button
+                    class="w-10 h-10 text-white rounded-full bg-blue-800 flex items-center justify-center font-bold border-none"
+                  >
+                    3
+                  </button>
+                </a>
+              </div>
+              <div class="mt-4 md:mt-0 w-full flex">
+                <div>
+                  <h2 class="text-4xl font-bold mb-2.5">Workspace Privacy</h2>
+                  <p class="mb-8 text-xl font-medium text-gray-700">
+                    Set up your privacy setting and modify members
+                  </p>
+                  <form class="w-full flex flex-col gap-4">
+                    <div class="flex items-center p-4 border rounded-lg shadow">
+                      <div
+                        class="flex items-center justify-center w-10 h-10 bg-green-200 rounded-full"
+                      >
+                        <img src="./assets/img/ph_globe.png" alt="Open" />
+                      </div>
+                      <div class="ml-4">
+                        <div class="text-lg font-semibold">Open</div>
+                        <div class="text-gray-500">
+                          Anyone can join the workspace
+                        </div>
+                      </div>
+                      <div class="ml-auto">
+                        <button
+                          class="w-6 h-6 border rounded-full border-gray-300 focus:outline-none"
+                        ></button>
+                      </div>
+                    </div>
+                    <div class="flex items-center p-4 border rounded-lg shadow">
+                      <div
+                        class="flex items-center justify-center w-10 h-10 bg-green-200 rounded-full"
+                      >
+                        <img
+                          src="./assets/img/material-symbols_lock-outline.png"
+                          alt="Open"
+                        />
+                      </div>
+                      <div class="ml-4">
+                        <div class="text-lg font-semibold">Open</div>
+                        <div class="text-gray-500">
+                          Anyone can join the workspace
+                        </div>
+                      </div>
+                      <div class="ml-auto">
+                        <button
+                          class="w-6 h-6 border rounded-full border-gray-300 focus:outline-none"
+                        ></button>
+                      </div>
+                    </div>
+                    <div class="flex items-center p-4 border rounded-lg shadow">
+                      <div
+                        class="flex items-center justify-center w-10 h-10 bg-green-200 rounded-full"
+                      >
+                        <img src="./assets/img/Group 467.png" alt="Open" />
+                      </div>
+                      <div class="ml-4">
+                        <div class="text-lg font-semibold">Open</div>
+                        <div class="text-gray-500">
+                          Anyone can join the workspace
+                        </div>
+                      </div>
+                      <div class="ml-auto">
+                        <button
+                          class="w-6 h-6 border rounded-full border-gray-300 focus:outline-none"
+                        ></button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                <!-- manage members  -->
+
+                <div class="p-6 w-2/4 mx-auto">
+                  <div class="flex items-center justify-between mb-4">
+                    <h1 class="text-base font-semibold">Manage Members</h1>
+                  </div>
+                  <div class="relative mb-6 flex gap-4">
+                    <input
+                      type="text"
+                      placeholder="Search members"
+                      class="w-full px-4 py-3 border rounded-full focus:outline-none focus:border-purple-500"
+                    />
+                    <button
+                      class="py-1 w-2/5 px-5 text-white bg-purple-500 text-xs rounded-full hover:bg-purple-600"
+                    >
+                      Add Member
+                    </button>
+                  </div>
+                  <div>
+                    <div class="flex items-center justify-between mb-2">
+                      <h2 class="font-semibold">Pending</h2>
+                      <span class="text-gray-500">Status</span>
+                    </div>
+                    <div
+                      class="flex items-center p-4 mb-2 bg-white border rounded-lg shadow"
+                    >
+                      <img
+                        src="./assets/img/image 29.png"
+                        alt="Avatar"
+                        class="w-10 h-10 mr-4 rounded-full"
+                      />
+                      <div class="flex-1">
+                        <div class="font-medium">Martha Field</div>
+                      </div>
+                      <div class="text-gray-500">Invited</div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="flex items-center justify-between mb-2">
+                      <h2 class="font-semibold">Joined</h2>
+                      <span class="text-gray-500">Permissions</span>
+                    </div>
+                    <div
+                      class="flex items-center p-4 mb-2 bg-white border rounded-lg shadow"
+                    >
+                      <img
+                        src="./assets/img/image 6.png"
+                        alt="Avatar"
+                        class="w-10 h-10 mr-4 rounded-full"
+                      />
+                      <div class="flex-1">
+                        <div class="font-medium">Bessie Cooper</div>
+                      </div>
+                      <div class="text-gray-500">Admin</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-end gap-2 mt-6">
+              <button
+                type="submit"
+                class="border py-2.5 px-5 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600"
+              >
+                <div class="flex">
+                  <img src="./assets/img/mingcute_arrow-up-line.png" alt="" />
+                  Previous
+                </div>
+              </button>
+              <button
+                type="submit"
+                class="bg-purple-600 text-white px-5 py-2.5 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600"
+              >
+                <div class="flex">
+                  Continue
+                  <img src="./assets/img/Group.png" alt="" />
+                </div>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("-translate-x-full");
+      }
+
+      function openTab(tabName, elem) {
+        const menuItems = document.querySelectorAll(".menu-item");
+        menuItems.forEach((item) => {
+          item.classList.remove("bg-gray-200");
+        });
+        elem.classList.add("bg-gray-200");
+      }
+    </script>
+  </body>
+</html>

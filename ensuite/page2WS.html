@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ENSUITE</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="h-screen">
+    <section class="h-screen">
+      <header class="bg-white shadow-md py-3">
+        <nav class="flex justify-between items-center mx-8">
+          <div>
+            <img
+              src="./assets/img/ENSUITELogo.png"
+              width="198"
+              height="45"
+              alt="ENSUITE Logo"
+            />
+          </div>
+          <div class="flex gap-4 items-center">
+            <img
+              src="./assets/img/Bell Vector.png"
+              width="24px"
+              height="24px"
+              alt="Bell Icon"
+            />
+            <img
+              src="./assets/img/Profile Avatar.png"
+              width="44px"
+              height="44px"
+              alt="Profile"
+            />
+            <button
+              id="menu-btn"
+              class="md:hidden border-2 border-solid-purple text-white px-2 py-2 rounded-lg"
+              onclick="toggleSidebar()"
+            >
+              <img
+                src="./assets/img/align-justify.svg"
+                class="text-white"
+                width="30px"
+                height="30px"
+                alt="Menu Icon"
+              />
+            </button>
+          </div>
+        </nav>
+      </header>
+      <div class="grid grid-cols-1 md:grid-cols-4 h-screen">
+        <!-- Sidebar -->
+        <aside
+          id="sidebar"
+          class="bg-white p-5 pt-16 shadow-md h-screen fixed md:relative hidden md:block transition-transform transform md:translate-x-0 -translate-x-full md:col-span-1"
+          style="width: 270px; height: 100%"
+        >
+          <ul class="list-none p-0 h-full">
+            <li
+              class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
+              onclick="openTab('ace-gpt', this)"
+            >
+              <img
+                src="./assets/img/ACE GPT.png"
+                width="24px"
+                height="24px"
+                alt="ACE GPT"
+              />ACE GPT
+            </li>
+            <li
+              class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
+              onclick="openTab('study-buddy', this)"
+            >
+              <img
+                src="./assets/img/Study Buddy.png"
+                width="24px"
+                height="24px"
+                alt="Study Buddy"
+              />Study Buddy AI
+            </li>
+            <li
+              class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
+              onclick="openTab('workspace', this)"
+            >
+              <img
+                src="./assets/img/Files Vector.png"
+                width="24px"
+                height="24px"
+                alt="Workspace"
+              />Workspace
+            </li>
+            <li
+              class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
+              onclick="openTab('campus-cart', this)"
+            >
+              <img
+                src="./assets/img/Campus.png"
+                width="24px"
+                height="24px"
+                alt="Campus Cart"
+              />Campus Cart
+            </li>
+            <li
+              class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
+              onclick="openTab('serenity', this)"
+            >
+              <img
+                src="./assets/img/Mind Vector.png"
+                width="24px"
+                height="24px"
+                alt="Serenity"
+              />Serenity
+            </li>
+            <li
+              class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
+              onclick="openTab('uni-link', this)"
+            >
+              <img
+                src="./assets/img/Chat Vector.png"
+                width="24px"
+                height="24px"
+                alt="Uni-Link"
+              />Uni-Link
+            </li>
+          </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main
+          class="sm:m-0 rounded-lg p-5 px-10 transition-all duration-300 md:col-span-3 md:w-11/12"
+        >
+          <h2
+            class="text-2xl md:text-2xl lg:text-2xl lg:text-left font-bold mb-2.5 sm:text-center text-left"
+          >
+            Create your Workspace
+          </h2>
+          <section
+            class="flex items-center flex-col justify-center h-full px-4"
+          >
+            <div class="p-4 w-full">
+              <div class="flex flex-col md:flex-row md:w-full m-auto">
+                <div
+                  class="flex flex-row md:flex-col items-center mb-8 md:mb-0 md:w-4/12"
+                >
+                  <a href="#signup" class="no-underline">
+                    <button
+                      class="w-10 h-10 text-white rounded-full bg-blue-500 flex items-center justify-center font-bold border-none"
+                    >
+                      1
+                    </button>
+                  </a>
+                  <div
+                    class="step-line h-0.5 w-full bg-blue-500 mx-auto md:h-28 md:w-0.5"
+                  ></div>
+                  <a href="#account-information">
+                    <button
+                      class="w-10 h-10 text-white rounded-full bg-blue-800 flex items-center justify-center font-bold border-none"
+                      onclick="showAccountInfo()"
+                    >
+                      2
+                    </button>
+                  </a>
+                  <div
+                    class="step-line h-0.5 w-full bg-gray-300 mx-auto md:h-28 md:w-0.5"
+                  ></div>
+                  <a href="#verification-code">
+                    <button
+                      class="w-10 h-10 text-purple-800 rounded-full bg-gray-300 flex items-center justify-center font-bold border-none"
+                    >
+                      3
+                    </button>
+                  </a>
+                </div>
+
+                <div class="mt-4 md:mt-0 w-full">
+                  <h2
+                    class="md:text-2xl lg:text-3xl font-bold mb-2.5 text-left"
+                  >
+                    Customize your Workspace
+                  </h2>
+                  <p class="mb-8 text-xl font-medium text-gray-700">
+                    Select the page(s) you’d like your workspace to include. You
+                    can select more than one.
+                  </p>
+
+                  <form class="w-full flex justify-between gap-11">
+                    <div class="mb-4 flex flex flex-col gap-6">
+                      <div class="flex flex-row items-center">
+                        <input
+                          type="checkbox"
+                          id="blog"
+                          class="mr-2 w-5 h-5 rounded-full"
+                        />
+                        <label for="blog" class="text-lg md:text-lg font-bold"
+                          >Blog</label
+                        >
+                      </div>
+                      <div>
+                        <p class="mb-10 text-lg text-gray-400">
+                          Share posts and interact with other members
+                        </p>
+                        <img src="./assets/img/image 246.png" alt="" />
+                      </div>
+                    </div>
+                    <div class="mb-4 flex flex flex-col gap-6">
+                      <div class="flex flex-row items-center">
+                        <input
+                          type="checkbox"
+                          id="calendar"
+                          class="mr-2 w-5 h-5 rounded-full"
+                        />
+                        <label
+                          for="calendar"
+                          class="text-lg md:text-lg font-bold"
+                          >Calendar</label
+                        >
+                      </div>
+                      <div>
+                        <p class="mb-10 text-lg text-gray-400">
+                          Create and view upcoming events for all members
+                        </p>
+                        <img src="./assets/img/image 250.png" alt="" />
+                      </div>
+                    </div>
+                    <div class="mb-4 flex flex-col gap-6">
+                      <div class="flex flex-row items-center">
+                        <input
+                          type="checkbox"
+                          id="files"
+                          class="mr-2 w-5 h-5 rounded-full bg-blue-800"
+                        />
+                        <label for="files" class="text-lg md:text-lg font-bold"
+                          >Files</label
+                        >
+                      </div>
+                      <div>
+                        <div>
+                          <p class="mb-10 text-lg text-gray-400">
+                            Organize documents for quick and easy access
+                          </p>
+                          <img src="./assets/img/image 251.png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                  <div class="flex justify-end gap-2 mt-6">
+                    <button
+                      type="submit"
+                      class="border py-2.5 px-5 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600"
+                    >
+                      <div class="flex">
+                        <img
+                          src="./assets/img/mingcute_arrow-up-line.png"
+                          alt=""
+                        />
+                        Previous
+                      </div>
+                    </button>
+                    <button
+                      type="submit"
+                      class="bg-purple-600 text-white px-5 py-2.5 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600"
+                    >
+                      <div class="flex">
+                        Continue
+                        <img src="./assets/img/Group.png" alt="" />
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="tab-content hidden" id="student-hub">
+            <h1 class="text-2xl font-bold mb-5">Student Hub</h1>
+            <p>Content for Student Hub will go here...</p>
+          </div>
+
+          <div class="tab-content hidden" id="uni-link">
+            <h1 class="text-2xl font-bold mb-5">Uni-Link</h1>
+            <p>Content for Uni-Link will go here...</p>
+          </div>
+
+          <div class="tab-content hidden" id="easyfit">
+            <h1 class="text-2xl font-bold mb-5">EasyFit</h1>
+            <p>Content for EasyFit will go here...</p>
+          </div>
+
+          <div class="tab-content hidden" id="serenity">
+            <h1 class="text-2xl font-bold mb-5">Serenity</h1>
+            <p>Content for Serenity will go here...</p>
+          </div>
+
+          <div class="tab-content hidden" id="campus-cart">
+            <h1 class="text-2xl font-bold mb-5">Campus Cart</h1>
+            <p>Content for Campus Cart will go here...</p>
+          </div>
+
+          <div class="tab-content hidden" id="study-buddy">
+            <h1 class="text-2xl font-bold mb-5">Study Buddy</h1>
+            <p>Content for Study Buddy will go here...</p>
+          </div>
+
+          <div class="tab-content hidden" id="ace-gpt">
+            <h1 class="text-2xl font-bold mb-5">ACE GPT</h1>
+            <p>Content for ACE GPT will go here...</p>
+          </div>
+        </main>
+      </div>
+    </section>
+    <script>
+      function openTab(tabId, element) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("menu-item");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabId).style.display = "block";
+        element.className += " active";
+      }
+
+      function toggleSidebar() {
+        document.getElementById("sidebar").classList.toggle("translate-x-0");
+      }
+
+      function showAccountInfo() {
+        var accountInfo = document.getElementById("account-information");
+        if (accountInfo.style.display === "none") {
+          accountInfo.style.display = "block";
+        } else {
+          accountInfo.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
