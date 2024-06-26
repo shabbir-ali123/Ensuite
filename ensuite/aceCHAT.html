@@ -12,6 +12,7 @@
 
   <body>
     <div class="flex h-screen">
+      <!-- Sidebar -->
       <aside
         id="sidebar"
         class="bg-white p-5 shadow-md h-screen md:h-auto fixed md:relative hidden md:block transition-transform transform -translate-x-full md:translate-x-0"
@@ -38,12 +39,12 @@
           <li
             class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
           >
-            Campus Cart
+            Study Buddy AI
             <img
-              src="./assets/img/Campus.png"
+              src="./assets/img/Study Buddy Vector.png"
               width="24px"
               height="24px"
-              alt="Campus Cart Icon"
+              alt="Study Buddy AI Icon"
             />
           </li>
           <li
@@ -60,34 +61,12 @@
           <li
             class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
           >
-            Student Hub
+            Campus Cart
             <img
-              src="./assets/img/Student Vector.png"
+              src="./assets/img/Campus.png"
               width="24px"
               height="24px"
-              alt="Student Hub Icon"
-            />
-          </li>
-          <li
-            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
-          >
-            Uni-Link
-            <img
-              src="./assets/img/Chat Vector.png"
-              width="24px"
-              height="24px"
-              alt="Uni-Link Icon"
-            />
-          </li>
-          <li
-            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
-          >
-            EasyFit
-            <img
-              src="./assets/img/Heart Vector.png"
-              width="24px"
-              height="24px"
-              alt="EasyFit Icon"
+              alt="Campus Cart Icon"
             />
           </li>
           <li
@@ -104,21 +83,22 @@
           <li
             class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
           >
-            Global Spotlight
+            Uni-Link
             <img
-              src="./assets/img/Vector.png"
+              src="./assets/img/Chat Vector.png"
               width="24px"
               height="24px"
-              alt="Global Spotlight Icon"
+              alt="Uni-Link Icon"
             />
           </li>
         </ul>
       </aside>
+
       <div class="flex-col md:flex-row h-full w-full">
+        <!-- Header -->
         <header class="bg-white shadow-md py-3 mx-16">
           <nav class="flex justify-between items-center mx-4 md:mx-8">
             <h2 class="text-left text-xl font-bold">ACE GPT</h2>
-
             <div class="flex gap-4 items-center justify-between">
               <img
                 src="./assets/img/Bell Vector.png"
@@ -151,56 +131,97 @@
 
         <!-- Main Content -->
         <main class="flex-1 p-4 md:p-8 transition-all duration-300">
-          <div class="p-8 rounded-lg bg-white">
-            <h2 class="text-5xl font-bold mb-4">
-              Hi, I'm <span class="text-purple-950">ACE</span>.
-            </h2>
-            <p class="text-5xl text-gray-700 font-bold mb-4">
-              How can I help you today?
-            </p>
-            <div class="flex items-center justify-center flex-col mt-40">
-              <div class="flex gap-5 w-3/6">
-                <p class="text-gray-700 mb-8 text-2xl font-medium">
-                  Ask me anything related to your school, its programs,
-                  resources, and much more...
-                </p>
+          <div
+            class="p-8 rounded-lg bg-white flex flex-col items-center justify-center"
+          >
+            <div class="flex items-center gap-3">
+              <img
+                src="./assets/img/ACE GPT Logo.png"
+                w-14
+                style="height: 53px"
+                alt=""
+              />
+              <h2 class="text-3xl font-medium mb-4">
+                Hi, I'm <span class="text-purple-950">ACE</span>. How can I help
+                you today?
+              </h2>
+            </div>
+
+            <div class="mt-8 flex flex-col space-y-4">
+              <!-- Chat Bubbles -->
+              <div style="color: #b5b5b5" class="flex items-center space-x-4">
+                <img
+                  src="./assets/img/image 7.png"
+                  class="w-10 h-10 rounded-full"
+                  alt="User Avatar"
+                />
+                <div class="">
+                  <p class="font-bold">Recommend an elective course</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
                 <img
                   src="./assets/img/ACE GPT Logo.png"
-                  style="height: 60px"
-                  alt=""
+                  class="w-10 h-10 rounded-full"
+                  alt="ACE GPT Logo"
                 />
+                <div class="max-w-lg font-medium">
+                  <p style="color: #3d3d3d">
+                    Sure! To give you the best recommendation, I'll need a bit
+                    more information about your interests and what you're
+                    studying. For example, are you leaning towards something
+                    that complements your major or are you looking for a course
+                    that offers a change of pace? Do you have any specific areas
+                    of interest like technology, arts, sciences, or social
+                    sciences?
+                  </p>
+                </div>
               </div>
-              <div
-                class="flex gap-9 max-w-52 max-h-40 items-center justify-center"
-              >
-                <div
-                  class="bg-purple-100 p-4 rounded-lg w-52 h-40 flex flex-col justify-around"
-                >
-                  <p class="font-bold">Advising</p>
-                  <p class="text-gray-600 font-bold">
-                    How do we access support resources?
+              <div class="flex items-center space-x-4">
+                <img
+                  src="./assets/img/image 7.png"
+                  class="w-10 h-10 rounded-full"
+                  alt="User Avatar"
+                />
+                <div class="max-w-lg">
+                  <p style="color: #b5b5b5" class="font-bold">
+                    I'm an economics major, but I don't want anything math-based
                   </p>
                 </div>
-                <div
-                  class="bg-purple-100 p-4 rounded-lg w-52 h-40 flex flex-col justify-around"
-                >
-                  <p class="font-bold">General</p>
-                  <p class="text-gray-600 font-bold">
-                    What are the library's hours today?
+              </div>
+              <div class="flex items-start space-x-4">
+                <img
+                  src="./assets/img/ACE GPT Logo.png"
+                  class="w-10 h-10 rounded-full"
+                  alt="ACE GPT Logo"
+                />
+                <div class="max-w-lg">
+                  <p style="color: #3d3d3d">
+                    Great! Since you're an economics major and looking for
+                    something not math-based, I'd recommend exploring courses
+                    that can broaden your understanding of societal impacts and
+                    personal development, which can be quite complementary to
+                    your major. Here are a few suggestions:
                   </p>
-                </div>
-                <div
-                  class="bg-purple-100 p-4 rounded-lg w-52 h-40 flex flex-col justify-around"
-                >
-                  <p class="font-bold">Eligibility</p>
-                  <p class="text-gray-600 font-bold">
-                    Am I eligible for a program transfer?
+                  <p>
+                    1. Behavioral Economics - Although it falls under economics,
+                    this course focuses more on psychological and cognitive
+                    factors influencing economic decisions rather than on
+                    complex mathematical modeling. It can provide a fresh
+                    perspective and is highly applicable to real-life decisions.
+                  </p>
+                  <p>
+                    2. Political Science - Understanding the political landscape
+                    can be incredibly beneficial for an economics student.
+                    Courses in this field can include topics on public policy,
+                    international relations, or government structure, which all
+                    tie closely to economic conditions and policies.
                   </p>
                 </div>
               </div>
             </div>
             <div
-              class="mt-8 flex justify-center items-center relative w-3/5 m-auto mt-44"
+              class="mt-8 flex justify-center items-center relative w-3/5 m-auto mt-16"
             >
               <input
                 type="text"
@@ -213,12 +234,14 @@
                 alt="Right Arrow Icon"
               />
             </div>
+            <p style="color: #4e4e4e" class="mt-2 text-xs">
+              Be sure to validate the data by checking ACEGPT's sources before
+              making important decisions.
+            </p>
           </div>
         </main>
       </div>
     </div>
-    <!-- Sidebar -->
-
     <script>
       function toggleSidebar() {
         const sidebar = document.getElementById("sidebar");
