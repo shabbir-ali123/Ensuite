@@ -20,6 +20,13 @@
         color: #383838;
       }
 
+      /* .menu-item:hover {
+            background-color: #747599;
+            border-radius: 8px;
+            padding: 16px 10px;
+            color: white;
+        } */
+
       .menu-item.active {
         background-color: #747599;
         border-radius: 8px;
@@ -34,17 +41,6 @@
 
       .close-btn {
         display: none;
-      }
-      @media (max-width: 640px) {
-        .step-line {
-          height: 2px;
-          width: 70px;
-          overflow: hidden;
-        }
-
-        .step-indicator {
-          margin-bottom: 1rem;
-        }
       }
 
       @media (max-width: 767px) {
@@ -69,7 +65,7 @@
   </head>
 
   <body>
-    <div class="flex" id="Customize">
+    <div class="flex">
       <aside
         id="sidebar"
         class="bg-white p-5 shadow-md h-screen md:h-auto fixed md:relative hidden md:block transition-transform transform -translate-x-full md:translate-x-0"
@@ -174,8 +170,10 @@
       </aside>
       <div class="flex-col md:flex-row h-full w-full">
         <header class="bg-white shadow-md py-3 md:mx-16">
-          <nav class="flex justify-between items-center mx-4 md:mx-8">
-            <h2 class="text-left md:text-xl font-bold">Getting Started</h2>
+          <nav class="flex justify-between items-center md:mx-4 md:mx-8">
+            <h2 class="text-left xl:text-xl xl:font-bold text-xs">
+              Getting Started
+            </h2>
 
             <div class="flex gap-4 items-center justify-between">
               <img
@@ -210,158 +208,143 @@
         <!-- Main Content -->
 
         <main
-          class="sm:m-0 rounded-lg p-5 px-10 transition-all duration-300 md:col-span-3 md:w-11/12"
+          class="flex-1 bg-white m-10 rounded-lg xl:p-5 xl:px-10 transition-all duration-300"
         >
-          <h2
-            class="text-2xl md:text-2xl lg:text-2xl lg:text-left font-bold mb-2.5 sm:text-center md:text-left text-center"
-          >
-            Create your Workspace
-          </h2>
-          <section
-            class="flex items-center flex-col justify-center h-full px-4"
-          >
-            <div class="p-4 w-full">
-              <div class="flex flex-col md:flex-row md:w-full m-auto">
-                <div
-                  class="flex flex-row md:flex-col items-center mb-8 md:mb-0"
-                >
-                  <button
-                    style="background-color: #3a1569"
-                    class="w-10 h-10 text-white rounded-full bg-blue-500 flex items-center justify-center font-bold border-none"
-                  >
-                    1
-                  </button>
+          <div class="tab-content hidden" id="ace-gpt">
+            <h1 class="font-bold mb-5 xl:text-4xl md:text-lg">
+              Welcome to ENSUITE!
+            </h1>
+            <p
+              style="color: #787878"
+              class="xl:text-lg md:text-left sm:text-center pb-7"
+            >
+              Before you can continue, there are a few things you need to set up
+            </p>
 
-                  <div
-                    style="background-color: #ebdcfd"
-                    class="step-line md:block h-28 w-0.5 bg-gray-300 mx-auto"
-                  ></div>
-                  <div class="hidden md:block"></div>
-
-                  <button
-                    style="background-color: #ebdcfd"
-                    class="w-10 h-10 text-white rounded-full bg-gray-300 flex items-center justify-center font-bold border-none"
-                    onclick="showAccountInfo()"
-                  >
-                    2
-                  </button>
-
-                  <div
-                    style="background-color: #ebdcfd"
-                    class="step-line md:block h-28 w-0.5 bg-gray-300 mx-auto"
-                  ></div>
-                  <div class="hidden md:block h-0.5 w-16"></div>
-
-                  <button
-                    style="background-color: #ebdcfd"
-                    class="w-10 h-10 text-white rounded-full bg-gray-300 flex items-center justify-center font-bold border-none"
-                  >
-                    3
-                  </button>
+            <!-- Setup Steps -->
+            <div
+              class="flex flex-col md:flex-row gap-8 justify-center items-center"
+            >
+              <div
+                class="text-center flex-1 mx-2 border border-gray-300 rounded-lg p-5 mb-5 md:mb-0 ml-0"
+              >
+                <div class="flex justify-center">
+                  <img
+                    src="./assets/img/animoji.png"
+                    class="w-48 h-48 mb-3 mt-6"
+                    alt="Avatar Placeholder"
+                  />
                 </div>
-
-                <div class="mt-4 md:mt-0 w-full">
-                  <h2
-                    class="md:text-2xl lg:text-3xl font-bold mb-2.5 text-left text-2xl"
+                <h2 class="text-xl font-bold md:text-left xl:text-left mb-1">
+                  Set up your Avatar
+                </h2>
+                <p
+                  style="color: #858585"
+                  class="xl:text-lg sm:text-center md:text-left border-b border-gray-300 pb-7"
+                >
+                  Your avatar will appear next to your name and seen by people
+                  that click your profile
+                </p>
+                <div class="mt-5 flex items-center justify-end gap-[25px]">
+                  <button
+                    style="color: #acacac"
+                    class="xl:text-lg xl:font-bold sm:text-xs"
                   >
-                    Customize your Workspace
-                  </h2>
-                  <p class="mb-8 md:text-xl font-medium">
-                    Select the page(s) you’d like your workspace to include. You
-                    can select more than one.
-                  </p>
-
-                  <form class="w-full lg:flex gap-11">
-                    <div class="mb-4 flex flex flex-col gap-6">
-                      <div class="flex flex-row items-center">
-                        <input
-                          type="checkbox"
-                          id="blog"
-                          class="mr-2 w-5 h-5 rounded-full"
-                        />
-                        <label for="blog" class="text-lg md:text-lg font-bold"
-                          >Blog</label
-                        >
-                      </div>
-                      <div>
-                        <p class="mb-10 text-lg text-gray-400">
-                          Share posts and interact with other members
-                        </p>
-                        <img src="./assets/img/image 246.png" alt="" />
-                      </div>
-                    </div>
-                    <div class="mb-4 flex flex flex-col gap-6">
-                      <div class="flex flex-row items-center">
-                        <input
-                          type="checkbox"
-                          id="calendar"
-                          class="mr-2 w-5 h-5 rounded-full"
-                        />
-                        <label
-                          for="calendar"
-                          class="text-lg md:text-lg font-bold"
-                          >Calendar</label
-                        >
-                      </div>
-                      <div>
-                        <p class="mb-10 text-lg text-gray-400">
-                          Create and view upcoming events for all members
-                        </p>
-                        <img src="./assets/img/image 250.png" alt="" />
-                      </div>
-                    </div>
-                    <div class="mb-4 flex flex-col gap-6">
-                      <div class="flex flex-row items-center">
-                        <input
-                          type="checkbox"
-                          id="files"
-                          class="mr-2 w-5 h-5 rounded-full bg-blue-800"
-                        />
-                        <label for="files" class="text-lg md:text-lg font-bold"
-                          >Files</label
-                        >
-                      </div>
-                      <div>
-                        <div>
-                          <p class="mb-10 text-lg text-gray-400">
-                            Organize documents for quick and easy access
-                          </p>
-                          <img src="./assets/img/image 251.png" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                  <div class="flex justify-end gap-2 mt-6">
-                    <a href="./page0WS.html">
-                      <button
-                        type="submit"
-                        class="border py-2.5 px-5 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600"
-                      >
-                        <div class="flex">
-                          <img
-                            src="./assets/img/mingcute_arrow-up-line.png"
-                            alt=""
-                          />
-                          Previous
-                        </div>
-                      </button>
-                    </a>
-                    <a href="./page3WS.html">
-                      <button
-                        type="submit"
-                        class="bg-purple-600 text-white px-5 py-2.5 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600"
-                      >
-                        <div class="flex">
-                          Continue
-                          <img src="./assets/img/Group.png" alt="" />
-                        </div>
-                      </button>
-                    </a>
-                  </div>
+                    Incomplete
+                  </button>
+                  <a href="/ensuite/avatar.html">
+                    <button
+                      style="background-color: #3a1569; color: #f3f3f3"
+                      class="xl:text-lg text-white px-5 py-2 rounded-lg ml-3 xl:font-bold sm:text-xs"
+                    >
+                      Continue
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <div
+                class="text-center flex-1 mx-2 border border-gray-300 rounded-lg p-5 mb-5 md:mb-0"
+              >
+                <div class="flex justify-center">
+                  <img
+                    src="./assets/img/second.png"
+                    class="h-48 mb-3 mt-6"
+                    alt="Info Placeholder"
+                  />
+                </div>
+                <h2 class="font-bold text-xl md:text-left sm:text-center mb-1">
+                  Tell us about yourself
+                </h2>
+                <p
+                  style="color: #858585"
+                  class="xl:text-lg sm:text-center md:text-left border-b border-gray-300 pb-7"
+                >
+                  This will appear when users view your profile or connect with
+                  you on Uni-Link
+                </p>
+                <div class="mt-5 flex items-center justify-end">
+                  <button
+                    style="color: #acacac"
+                    class="xl:text-lg xl:font-bold sm:text-xs"
+                  >
+                    Incomplete
+                  </button>
+                  <a href="./about.html">
+                    <button
+                      style="background-color: #3a1569; color: #f3f3f3"
+                      class="xl:text-lg text-white px-5 py-2 rounded-lg ml-3 xl:font-bold sm:text-xs"
+                    >
+                      Continue
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <div
+                class="text-center flex-1 mx-2 border border-gray-300 rounded-lg p-5"
+              >
+                <div class="flex justify-center">
+                  <img
+                    src="./assets/img/Teamwork.png"
+                    class="w-48 h-48 mb-3 mt-6"
+                    alt="Workspace Placeholder"
+                  />
+                </div>
+                <h2 class="font-bold text-xl md:text-left sm:text-center mb-1">
+                  Create your first Workspace
+                </h2>
+                <p
+                  style="color: #858585"
+                  class="xl:text-lg sm:text-center md:text-left border-b border-gray-300 pb-7"
+                >
+                  Workspace is an amazing feature that allows you to build a
+                  community around a specific topic.
+                </p>
+                <div class="mt-5 flex items-center justify-end gap-[25px]">
+                  <button
+                    style="color: #acacac"
+                    class="xl:text-lg xl:font-bold sm:text-xs"
+                  >
+                    Optional
+                  </button>
+                  <a href="./page0WS.html">
+                    <button
+                      style="background-color: #3a1569; color: #f3f3f3"
+                      class="xl:text-lg text-white px-5 py-2 rounded-lg ml-3 xl:font-bold sm:text-xs"
+                    >
+                      Continue
+                    </button>
+                  </a>
                 </div>
               </div>
             </div>
-          </section>
+
+            <div class="text-center" style="font-size: 22px">
+              <p class="font-bold xl:mt-24 mt-12">
+                You are almost ready!
+                <span style="color: #9c27b0">3 steps remaining</span>
+              </p>
+            </div>
+          </div>
         </main>
       </div>
     </div>

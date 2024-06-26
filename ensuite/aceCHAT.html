@@ -9,7 +9,6 @@
       rel="stylesheet"
     />
   </head>
-
   <body>
     <div class="flex h-screen">
       <!-- Sidebar -->
@@ -93,10 +92,9 @@
           </li>
         </ul>
       </aside>
-
       <div class="flex-col md:flex-row h-full w-full">
         <!-- Header -->
-        <header class="bg-white shadow-md py-3 mx-16">
+        <header class="bg-white shadow-md py-3 md:mx-16">
           <nav class="flex justify-between items-center mx-4 md:mx-8">
             <h2 class="text-left text-xl font-bold">ACE GPT</h2>
             <div class="flex gap-4 items-center justify-between">
@@ -128,11 +126,10 @@
             </div>
           </nav>
         </header>
-
         <!-- Main Content -->
         <main class="flex-1 p-4 md:p-8 transition-all duration-300">
           <div
-            class="p-8 rounded-lg bg-white flex flex-col items-center justify-center"
+            class="md:p-8 rounded-lg bg-white flex flex-col items-center justify-center"
           >
             <div class="flex items-center gap-3">
               <img
@@ -141,12 +138,11 @@
                 style="height: 53px"
                 alt=""
               />
-              <h2 class="text-3xl font-medium mb-4">
+              <h2 class="md:text-3xl font-medium mb-4">
                 Hi, I'm <span class="text-purple-950">ACE</span>. How can I help
                 you today?
               </h2>
             </div>
-
             <div class="mt-8 flex flex-col space-y-4">
               <!-- Chat Bubbles -->
               <div style="color: #b5b5b5" class="flex items-center space-x-4">
@@ -165,7 +161,7 @@
                   class="w-10 h-10 rounded-full"
                   alt="ACE GPT Logo"
                 />
-                <div class="max-w-lg font-medium">
+                <div class="md:text-base max-w-lg font-medium">
                   <p style="color: #3d3d3d">
                     Sure! To give you the best recommendation, I'll need a bit
                     more information about your interests and what you're
@@ -221,18 +217,20 @@
               </div>
             </div>
             <div
-              class="mt-8 flex justify-center items-center relative w-3/5 m-auto mt-16"
+              class="flex justify-center items-center relative w-full md:w-3/5 mx-auto mt-8 md:mt-16 p-4 md:p-0"
             >
               <input
                 type="text"
                 placeholder="Click here to start typing..."
-                class="p-4 rounded-full shadow-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600 outline-none text-xl flex-grow"
+                class="p-4 rounded-full shadow-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600 outline-none md:text-xl w-full md:flex-grow"
               />
-              <img
-                src="./assets/img/right arrow.png"
-                class="absolute right-4 w-6 h-6"
-                alt="Right Arrow Icon"
-              />
+              <a href="./aceCHAT.html">
+                <img
+                  src="./assets/img/right arrow.png"
+                  class="absolute right-8 md:bottom-4 bottom-8 h-6"
+                  alt="Right Arrow Icon"
+                />
+              </a>
             </div>
             <p style="color: #4e4e4e" class="mt-2 text-xs">
               Be sure to validate the data by checking ACEGPT's sources before

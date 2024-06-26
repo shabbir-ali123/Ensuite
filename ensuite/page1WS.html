@@ -8,302 +8,355 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <style>
+      .hidden-sidebar {
+        transform: translateX(-100%);
+      }
+
+      .menu-item {
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        color: #383838;
+      }
+
+      /* .menu-item:hover {
+            background-color: #747599;
+            border-radius: 8px;
+            padding: 16px 10px;
+            color: white;
+        } */
+
+      .menu-item.active {
+        background-color: #747599;
+        border-radius: 8px;
+        padding: 13px 10px;
+        color: white;
+      }
+
+      .menu-item.active img {
+        filter: brightness(0) invert(1);
+        /* Change SVG color to white */
+      }
+
+      .close-btn {
+        display: none;
+      }
+
+      @media (max-width: 767px) {
+        .close-btn {
+          display: block;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          height: 30px;
+          width: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: rgb(48, 79, 255);
+          border-radius: 50%;
+          border: none;
+          font-size: 24px;
+          cursor: pointer;
+        }
+      }
+    </style>
   </head>
-  <body class="h-screen">
-    <section class="h-screen">
-      <header class="bg-white shadow-md py-3">
-        <nav class="flex justify-between items-center mx-8">
-          <div>
+
+  <body>
+    <div class="flex">
+      <aside
+        id="sidebar"
+        class="bg-white p-5 shadow-md h-screen md:h-auto fixed md:relative hidden md:block transition-transform transform -translate-x-full md:translate-x-0"
+        style="width: 270px"
+      >
+        <img
+          src="./assets/img/ENSUITELogo.png"
+          width="198"
+          height="45"
+          alt="ENSUITE Logo"
+        />
+        <ul class="list-none p-0 py-16">
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            ACE GPT
             <img
-              src="./assets/img/ENSUITELogo.png"
-              width="198"
-              height="45"
-              alt="ENSUITE Logo"
-            />
-          </div>
-          <div class="flex gap-4 items-center">
-            <img
-              src="./assets/img/Bell Vector.png"
+              src="./assets/img/ACE GPT.png"
               width="24px"
               height="24px"
-              alt=""
+              alt="ACE GPT Icon"
             />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Campus Cart
             <img
-              src="./assets/img/Profile Avatar.png"
-              width="44px"
-              height="44px"
-              alt="profile"
+              src="./assets/img/Campus.png"
+              width="24px"
+              height="24px"
+              alt="Campus Cart Icon"
             />
-            <button
-              id="menu-btn"
-              class="md:hidden border-2 border-solid-purple text-white px-2 py-2 rounded-lg"
-              onclick="toggleSidebar()"
-            >
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Workspace
+            <img
+              src="./assets/img/Files Vector.png"
+              width="24px"
+              height="24px"
+              alt="Workspace Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Student Hub
+            <img
+              src="./assets/img/Student Vector.png"
+              width="24px"
+              height="24px"
+              alt="Student Hub Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Uni-Link
+            <img
+              src="./assets/img/Chat Vector.png"
+              width="24px"
+              height="24px"
+              alt="Uni-Link Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            EasyFit
+            <img
+              src="./assets/img/Heart Vector.png"
+              width="24px"
+              height="24px"
+              alt="EasyFit Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Serenity
+            <img
+              src="./assets/img/Mind Vector.png"
+              width="24px"
+              height="24px"
+              alt="Serenity Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Global Spotlight
+            <img
+              src="./assets/img/Vector.png"
+              width="24px"
+              height="24px"
+              alt="Global Spotlight Icon"
+            />
+          </li>
+        </ul>
+      </aside>
+      <div class="flex-col md:flex-row h-full w-full">
+        <header class="bg-white shadow-md py-3 md:mx-16">
+          <nav class="flex justify-between items-center mx-4 md:mx-8">
+            <h2 class="text-left md:text-xl font-bold">Getting Started</h2>
+
+            <div class="flex gap-4 items-center justify-between">
               <img
-                src="./assets/img/align-justify.svg"
-                class="text-white"
-                width="30px"
-                height="30px"
-                alt="ENSUITE Logo"
+                src="./assets/img/Bell Vector.png"
+                width="24px"
+                height="24px"
+                alt="Bell Icon"
               />
-            </button>
-          </div>
-        </nav>
-      </header>
-      <div class="grid grid-cols-1 md:grid-cols-4 h-screen">
-        <!-- Sidebar -->
-        <aside
-          id="sidebar"
-          class="bg-white p-5 pt-16 shadow-md h-screen fixed md:relative hidden md:block transition-transform transform md:translate-x-0 -translate-x-full md:col-span-1"
-          style="width: 270px; height: 100%"
-        >
-          <ul class="list-none p-0 h-full">
-            <li
-              class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-              onclick="openTab('ace-gpt', this)"
-            >
               <img
-                src="./assets/img/ACE GPT.png"
-                width="24px"
-                height="24px"
-                alt=""
-              />ACE GPT
-            </li>
-            <li
-              class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-              onclick="openTab('campus-cart', this)"
-            >
-              <img
-                src="./assets/img/Campus.png"
-                width="24px"
-                height="24px"
-                alt=""
-              />Campus Cart
-            </li>
-            <li
-              class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-              onclick="openTab('workspace', this)"
-            >
-              <img
-                src="./assets/img/Files Vector.png"
-                width="24px"
-                height="24px"
-                alt=""
-              />Workspace
-            </li>
-            <li
-              class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-              onclick="openTab('student-hub', this)"
-            >
-              <img
-                src="./assets/img/Student Vector.png"
-                width="24px"
-                height="24px"
-                alt=""
-              />Student Hub
-            </li>
-            <li
-              class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-              onclick="openTab('uni-link', this)"
-            >
-              <img
-                src="./assets/img/Chat Vector.png"
-                width="24px"
-                height="24px"
-                alt=""
-              />Uni-Link
-            </li>
-            <li
-              class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-              onclick="openTab('easyfit', this)"
-            >
-              <img
-                src="./assets/img/Heart Vector.png"
-                width="24px"
-                height="24px"
-                alt=""
-              />EasyFit
-            </li>
-            <li
-              class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-              onclick="openTab('serenity', this)"
-            >
-              <img
-                src="./assets/img/Mind Vector.png"
-                width="24px"
-                height="24px"
-                alt=""
-              />Serenity
-            </li>
-            <li
-              class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-              onclick="openTab('global-spotlight', this)"
-            >
-              <img
-                src="./assets/img/Vector.png"
-                width="24px"
-                height="24px"
-                alt=""
-              />Global Spotlight
-            </li>
-          </ul>
-        </aside>
+                src="./assets/img/Profile Avatar.png"
+                width="44px"
+                height="44px"
+                alt="Profile"
+              />
+              <button
+                id="menu-btn"
+                class="md:hidden border-2 border-purple-500 text-white px-2 py-2 rounded-lg"
+                onclick="toggleSidebar()"
+              >
+                <img
+                  src="./assets/img/align-justify.svg"
+                  class="text-white"
+                  width="30px"
+                  height="30px"
+                  alt="Menu Icon"
+                />
+              </button>
+            </div>
+          </nav>
+        </header>
 
         <!-- Main Content -->
+
         <main
-          class="sm:m-0 rounded-lg p-5 px-10 transition-all duration-300 md:col-span-3 md:w-11/12"
+          class="flex-1 bg-white md:m-10 rounded-lg p-5 md:px-10 transition-all duration-300 h-screen"
         >
-          <h2
-            class="text-2xl md:text-2xl lg:text-4xl lg:text-left font-bold mb-2.5 sm:text-center text-left"
-          >
-            Create your Workspace
-          </h2>
-          <section
-            class="flex items-center flex-col justify-center h-full px-4"
-          >
-            <div class="p-4 w-full">
-              <div class="flex flex-col md:flex-row md:w-full m-auto">
-                <div
-                  class="flex flex-row md:flex-col items-center mb-8 md:mb-0 md:w-4/12"
+          <!-- Menu Button for Mobile -->
+          <div class="tab-content hidden md:w-3/5" id="ace-gpt">
+            <h1
+              class="text-2xl md:text-2xl lg:text-4xl lg:text-left font-bold mb-2.5"
+            >
+              Tell us about yourself
+            </h1>
+            <p class="mb-5 md:text-xl font-medium">
+              This will appear when users view your profile or connect with you
+              on Uni-Link
+            </p>
+
+            <!-- About Me Section -->
+            <div class="border-gray-300 pb-6 mb-6">
+              <label for="about-me" class="block font-bold mb-2 text-xl"
+                >About Me</label
+              >
+              <textarea
+                id="about-me"
+                rows="4"
+                class="w-full px-3 py-2 text-gray-700 border shadow-sm rounded-lg focus:outline-none"
+                placeholder="Click here to start typing"
+              ></textarea>
+            </div>
+
+            <!-- Add Socials Section -->
+            <div class="border-b border-gray-300 pb-6 mb-6 shadow-sm">
+              <label
+                for="socials"
+                class="block font-bold mb-2 font-bold mb-2 text-xl"
+                >Add Socials</label
+              >
+              <div class="flex flex-wrap gap-4 items-center">
+                <label for="linkedin" class="text-gray-600 text-lg flex gap-2.5"
+                  >LinkedIn</label
                 >
-                  <a href="#signup" class="no-underline">
-                    <button
-                      class="w-10 h-10 text-white rounded-full bg-blue-500 flex items-center justify-center font-bold border-none"
-                    >
-                      1
-                    </button>
-                  </a>
-                  <div
-                    class="step-line h-0.5 w-full bg-gray-300 mx-auto md:h-28 md:w-0.5"
-                  ></div>
-                  <a href="#account-information">
-                    <button
-                      class="w-10 h-10 text-purple-800 rounded-full bg-gray-300 flex items-center justify-center font-bold border-none"
-                      onclick="showAccountInfo()"
-                    >
-                      2
-                    </button>
-                  </a>
-                  <div
-                    class="step-line h-0.5 w-full bg-gray-300 mx-auto md:h-28 md:w-0.5"
-                  ></div>
-                  <a href="#verification-code">
-                    <button
-                      class="w-10 h-10 text-purple-800 rounded-full bg-gray-300 flex items-center justify-center font-bold border-none"
-                    >
-                      3
-                    </button>
-                  </a>
-                </div>
-
-                <div class="mt-4 md:mt-0 w-full">
-                  <h2
-                    class="text-3xl md:text-2xl lg:text-4xl font-bold mb-2.5 text-left"
-                  >
-                    Workspace Information
-                  </h2>
-                  <p class="mb-8 text-lg text-gray-700">
-                    Create a name and a description for your Workspace.
-                  </p>
-
-                  <form class="w-full">
-                    <div class="mb-4">
-                      <label
-                        for="workspace-name"
-                        class="block text-lg md:text-lg font-medium mb-2"
-                        >Workspace Name</label
-                      >
-                      <input
-                        type="text"
-                        id="workspace-name"
-                        placeholder="e.g. Muscle Makers"
-                        class="w-full py-2 md:py-4 px-3 border text-base md:text-lg border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 mb-7"
-                      />
-                    </div>
-                    <div class="mb-4">
-                      <label
-                        for="description"
-                        class="block text-lg md:text-lg font-medium mb-2"
-                        >Description</label
-                      >
-                      <textarea
-                        id="description"
-                        placeholder="The description will be seen by anyone who opens your workspace"
-                        class="w-full py-4 md:py-4 px-3 border text-base md:text-lg border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600"
-                      ></textarea>
-                    </div>
-                    <div class="flex justify-end">
-                      <button
-                        type="submit"
-                        class="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600"
-                      >
-                        Continue
-                      </button>
-                    </div>
-                  </form>
-                </div>
+                <img
+                  src="./assets/img/link Vector.png"
+                  width="20px"
+                  height="10px"
+                />
+                <label
+                  for="instagram"
+                  class="text-gray-600 text-lg flex gap-2.5"
+                  >Instagram</label
+                >
+                <img
+                  src="./assets/img/link Vector.png"
+                  width="20px"
+                  height="10px"
+                />
+                <label
+                  for="snapchat"
+                  class="text-gray-600 text-lg flex gap-2.5 items-center"
+                  >Snapchat</label
+                >
+                <img
+                  src="./assets/img/link Vector.png"
+                  width="20px"
+                  height="10px"
+                />
               </div>
             </div>
-          </section>
 
-          <div class="tab-content hidden" id="student-hub">
-            <h1 class="text-2xl font-bold mb-5">Student Hub</h1>
-            <p>Content for Student Hub will go here...</p>
-          </div>
+            <!-- Profile Preview -->
+            <div class="border-b border-gray-300 pb-6 mb-6 shadow-sm">
+              <h2 class="text-gray-700 text-lg font-bold mb-2">Preview</h2>
+              <div class="flex items-center gap-4">
+                <img
+                  src="./assets/img/Profile Avatar.png"
+                  class="w-14 h-14 rounded-full"
+                  alt="Profile Avatar"
+                />
+                <div class="flex gap-5">
+                  <p class="font-bold md:text-2xl">John Doe</p>
+                  <div class="flex gap-2.5">
+                    <img
+                      src="./assets/img/linkedin vector.png"
+                      width="26px"
+                      height="26px"
+                      alt="LinkedIn"
+                    />
+                    <img
+                      src="./assets/img/instagram.png"
+                      width="26px"
+                      height="26px"
+                      alt="Instagram"
+                    />
+                    <img
+                      src="./assets/img/Snapchat Vector.png"
+                      width="26px"
+                      height="26px"
+                      alt="Snapchat"
+                    />
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-600 mt-2 md:text-xl font-medium">
+                Hi! My name is John and I am in my 4th year at Laurier. I am
+                studying Economics. On my free time I enjoy listening to 21
+                Savage and stunt driving.
+              </p>
+            </div>
 
-          <div class="tab-content hidden" id="uni-link">
-            <h1 class="text-2xl font-bold mb-5">Uni-Link</h1>
-            <p>Content for Uni-Link will go here...</p>
-          </div>
-
-          <div class="tab-content hidden" id="easyfit">
-            <h1 class="text-2xl font-bold mb-5">EasyFit</h1>
-            <p>Content for EasyFit will go here...</p>
-          </div>
-
-          <div class="tab-content hidden" id="serenity">
-            <h1 class="text-2xl font-bold mb-5">Serenity</h1>
-            <p>Content for Serenity will go here...</p>
-          </div>
-
-          <div class="tab-content hidden" id="global-spotlight">
-            <h1 class="text-2xl font-bold mb-5">Global Spotlight</h1>
-            <p>Content for Global Spotlight will go here...</p>
+            <!-- Buttons -->
+            <div class="flex justify-end gap-4">
+              <a href="./home.html">
+                <button
+                  class="bg-transparent text-black py-2 px-5 border rounded-lg"
+                  style="border: 1.5px solid #3a1569"
+                >
+                  Skip
+                </button>
+                <button
+                  class="text-white py-2 px-4 rounded-lg"
+                  style="background-color: #3a1569"
+                >
+                  Confirm
+                </button>
+              </a>
+            </div>
           </div>
         </main>
       </div>
-    </section>
+    </div>
+
     <script>
       function toggleSidebar() {
-        const sidebar = document.getElementById("sidebar");
-        sidebar.classList.toggle("-translate-x-full");
+        var sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("hidden");
       }
 
-      function openTab(tabId, element) {
-        const tabs = document.querySelectorAll(".tab-content");
-        tabs.forEach((tab) => {
-          tab.classList.add("hidden");
-        });
-        const activeTab = document.getElementById(tabId);
-        if (activeTab) {
-          activeTab.classList.remove("hidden");
+      function openTab(tabName, el) {
+        var i, tabcontent, menuitem;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].classList.add("hidden");
         }
-
-        const menuItems = document.querySelectorAll(".menu-item");
-        menuItems.forEach((item) => {
-          item.classList.remove("active");
-        });
-        element.classList.add("active");
-      }
-
-      function showAccountInfo() {
-        const accountInfo = document.getElementById("account-information");
-        if (accountInfo.style.display === "none") {
-          accountInfo.style.display = "block";
-        } else {
-          accountInfo.style.display = "none";
+        menuitem = document.getElementsByClassName("menu-item");
+        for (i = 0; i < menuitem.length; i++) {
+          menuitem[i].classList.remove("active");
         }
+        document.getElementById(tabName).classList.remove("hidden");
+        el.classList.add("active");
       }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        openTab("ace-gpt", document.querySelector(".menu-item"));
+      });
     </script>
   </body>
 </html>
