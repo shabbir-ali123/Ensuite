@@ -10,146 +10,143 @@
     />
 </head>
     <body>
-     <!-- headedr -->
-     <header class="bg-white shadow-md py-3">
-        <nav class="flex justify-between items-center mx-8">
-          <div>
-            <img
-              src="./assets/img/ENSUITELogo.png"
-              width="198"
-              height="45"
-              alt="ENSUITE Logo"
-            />
-          </div>
-          <div class="flex gap-4 items-center">
-            <img
-              src="./assets/img/Bell Vector.png"
-              width="24px"
-              height="24px"
-              alt=""
-            />
-            <img
-              src="./assets/img/Profile Avatar.png"
-              width="44px"
-              height="44px"
-              alt="profile"
-            />
-            <button
-              id="menu-btn"
-              class="md:hidden border-2 border-solid-purple text-white px-2 py-2 rounded-lg"
-              onclick="toggleSidebar()"
-            >
-              <img
-                src="./assets/img/align-justify.svg"
-                class="text-white"
-                width="30px"
-                height="30px"
-                alt="ENSUITE Logo"
-              />
-            </button>
-          </div>
-        </nav>
-      </header>
-      <!-- Sidebar -->
-      <div class="flex">
+      <div class="flex" id="Customize">
         <aside
           id="sidebar"
-          class="bg-white p-5 pt-16 shadow-md h-screen fixed md:relative hidden md:block transition-transform transform md:translate-x-0 md:hidden-sidebar"
-          style="width: 270px; height: 100%; right: 0"
+          class="bg-white p-5 shadow-md h-screen md:h-auto fixed md:relative hidden md:block transition-transform transform -translate-x-full md:translate-x-0"
+          style="width: 270px"
         >
-          <button class="close-btn" onclick="toggleSidebar()">×</button>
-  
-          <ul class="list-none p-0 h-full">
+          <img
+            src="./assets/img/ENSUITELogo.png"
+            width="198"
+            height="45"
+            alt="ENSUITE Logo"
+          />
+          <ul class="list-none p-0 py-16">
             <li
-              class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-              onclick="openTab('ace-gpt', this)"
+              class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
             >
+              ACE GPT
               <img
                 src="./assets/img/ACE GPT.png"
                 width="24px"
                 height="24px"
-                alt=""
-              />ACE GPT
+                alt="ACE GPT Icon"
+              />
             </li>
             <li
-              class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-              onclick="openTab('campus-cart', this)"
+              class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
             >
+              Campus Cart
               <img
                 src="./assets/img/Campus.png"
                 width="24px"
                 height="24px"
-                alt=""
-              />Campus Cart
+                alt="Campus Cart Icon"
+              />
             </li>
             <li
-              class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-              onclick="openTab('workspace', this)"
+              class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
             >
+              Workspace
               <img
                 src="./assets/img/Files Vector.png"
                 width="24px"
                 height="24px"
-                alt=""
-              />Workspace
+                alt="Workspace Icon"
+              />
             </li>
             <li
-              class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-              onclick="openTab('student-hub', this)"
+              class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
             >
+              Student Hub
               <img
                 src="./assets/img/Student Vector.png"
                 width="24px"
                 height="24px"
-                alt=""
-              />Student Hub
+                alt="Student Hub Icon"
+              />
             </li>
             <li
-              class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-              onclick="openTab('uni-link', this)"
+              class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
             >
+              Uni-Link
               <img
                 src="./assets/img/Chat Vector.png"
                 width="24px"
                 height="24px"
-                alt=""
-              />Uni-Link
+                alt="Uni-Link Icon"
+              />
             </li>
             <li
-              class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-              onclick="openTab('easyfit', this)"
+              class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
             >
+              EasyFit
               <img
                 src="./assets/img/Heart Vector.png"
                 width="24px"
                 height="24px"
-                alt=""
-              />EasyFit
+                alt="EasyFit Icon"
+              />
             </li>
             <li
-              class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-              onclick="openTab('serenity', this)"
+              class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
             >
+              Serenity
               <img
                 src="./assets/img/Mind Vector.png"
                 width="24px"
                 height="24px"
-                alt=""
-              />Serenity
+                alt="Serenity Icon"
+              />
             </li>
             <li
-              class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-              onclick="openTab('global-spotlight', this)"
+              class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
             >
+              Global Spotlight
               <img
                 src="./assets/img/Vector.png"
                 width="24px"
                 height="24px"
-                alt=""
-              />Global Spotlight
+                alt="Global Spotlight Icon"
+              />
             </li>
           </ul>
         </aside>
+        <div class="flex-col md:flex-row h-full w-full">
+        <header class="bg-white shadow-md py-3 md:mx-16">
+          <nav class="flex justify-between items-center mx-4 md:mx-8">
+              <h2 class="text-left md:text-xl font-bold">Getting Started</h2>
+  
+              <div class="flex gap-4 items-center justify-between">
+                <img
+                  src="./assets/img/Bell Vector.png"
+                  width="24px"
+                  height="24px"
+                  alt="Bell Icon"
+                />
+                <img
+                  src="./assets/img/Profile Avatar.png"
+                  width="44px"
+                  height="44px"
+                  alt="Profile"
+                />
+                <button
+                  id="menu-btn"
+                  class="md:hidden border-2 border-purple-500 text-white px-2 py-2 rounded-lg"
+                  onclick="toggleSidebar()"
+                >
+                  <img
+                    src="./assets/img/align-justify.svg"
+                    class="text-white"
+                    width="30px"
+                    height="30px"
+                    alt="Menu Icon"
+                  />
+                </button>
+              </div>
+            </nav>
+          </header>
         <!-- content -->
             <div class="flex w-full flex-col" style="
                     margin-left: 221px;
